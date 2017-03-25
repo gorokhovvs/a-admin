@@ -9,8 +9,17 @@ export class CardService {
 
     private baseUrl: string = 'api/cards';
     private headers: Headers = new Headers({'Authorization': 'Bearer <token>'});
+    private card: Card;
 
     constructor(private http: Http) {
+    }
+
+    get selectedCard(): Card {
+        return this.card;
+    }
+
+    set selectedCard(card: Card) {
+        this.card = card;
     }
 
     getAll(): Promise<Card[]> {

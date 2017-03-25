@@ -1,20 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { Card } from '../../model/card.model';
 import { CardService } from '../../service/card.service';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'card-list',
-    templateUrl: './app/component/card/card-list.component.html',
-    providers: [
-        CardService
-    ]
+    templateUrl: './app/component/card/card-list.component.html'
 })
 
 export class CardListComponent implements OnInit {
     abstract: any;
     cards: Card[];
-    constructor(private cardsService: CardService, private router: Router) {
+    constructor(private cardsService: CardService) {
     }
 
     ngOnInit(): void {
@@ -23,5 +19,9 @@ export class CardListComponent implements OnInit {
 
     getCards(): void {
         this.cardsService.getAll().then(cards => this.cards = cards);
+    }
+
+    onSelect(card: Card): void {
+        this.cardsService.selectedCard = card;
     }
 }

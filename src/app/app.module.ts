@@ -9,6 +9,8 @@ import { CardListComponent } from './component/card/card-list.component';
 import { CardComponent } from './component/card/card.component';
 import { TagComponent } from './component/tag/tag.component';
 
+import { CardService } from './service/card.service';
+
 import { AppRoutingModule } from './app.route';
 
 import { MaterialModule } from '@angular/material';
@@ -30,6 +32,9 @@ import { MaterialModule } from '@angular/material';
     ],
     bootstrap: [
         AppComponent
+    ],
+    providers: [
+        CardService
     ]
 })
 
