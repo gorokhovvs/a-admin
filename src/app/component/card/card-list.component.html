@@ -1,0 +1,5 @@
+<md-list>
+    <md-list-item *ngFor="let card of cards">
+        <span (click)="onSelect(card)">{{card.title}}</span>
+    </md-list-item>
+</md-list>

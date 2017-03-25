@@ -1,0 +1,9 @@
+<md-nav-list>
+    <md-list-item *ngFor="let navItem of navItems">
+        <a md-line class="collection-item"
+           [class.active]="navItem.url === currentPath"
+           (click)="onSelect(navItem)" routerLink="/{{navItem.url}}">
+            <span>{{navItem.name}}</span>
+        </a>
+    </md-list-item>
+</md-nav-list>
