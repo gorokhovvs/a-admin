@@ -1,4 +1,11 @@
 <md-list>
+    <div class="base-spinner-wrap">
+        <md-progress-circle *ngIf="isLoading"
+                            class="base-spinner"
+                            color="primary"
+                            mode="indeterminate">
+        </md-progress-circle>
+    </div>
     <md-list-item *ngFor="let card of cards">
         <span (click)="onSelect(card)" routerLink="/cards/{{card._entityId}}">{{card.title}}</span>
     </md-list-item>

@@ -18,6 +18,18 @@ body, html {
     padding: 20px;
 }
 
+.base-spinner-wrap {
+    width: 100%;
+    height: 100%;
+}
+
+.base-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+}
+
 .input-full-width {
     width: 100%;
 }

@@ -10,6 +10,7 @@ import { CardService } from '../../service/card.service';
 export class CardListComponent implements OnInit {
     abstract: any;
     cards: Card[];
+    isLoading: boolean;
     constructor(private cardsService: CardService) {
     }
 
@@ -18,7 +19,11 @@ export class CardListComponent implements OnInit {
     }
 
     getCards(): void {
-        this.cardsService.getAll().then(cards => this.cards = cards);
+        this.isLoading = true;
+        this.cardsService.getAll().then((cards) => {
+            this.cards = cards;
+            this.isLoading = false;
+        });
     }
 
     onSelect(card: Card): void {
