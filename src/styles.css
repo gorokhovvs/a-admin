@@ -13,3 +13,11 @@ body, html {
 .mat-sidenav {
     min-width: 20vw !important;
 }
+
+.base-form {
+    padding: 20px;
+}
+
+.input-full-width {
+    width: 100%;
+}

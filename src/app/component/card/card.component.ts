@@ -20,10 +20,9 @@ export class CardComponent implements OnInit {
     }
 
     setCard(): void {
-        console.log(this.route);
         this.card = this.cardsService.selectedCard;
         if (!this.card) {
-            let id = this.route.url.value[1].path;
+            let id = this.route.snapshot.url[1].path;
             this.cardsService.getOne(id).then(cardData => this.card = cardData);
         }
     }

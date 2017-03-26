@@ -1,3 +1,5 @@
-<div *ngIf="card">
-    {{card.title}}
+<div *ngIf="card" class="base-form">
+    <md-input-container class="input-full-width">
+        <textarea mdInput mdTextareaAutosize [(ngModel)]="card.title" placeholder="Title"></textarea>
+    </md-input-container>
 </div>
